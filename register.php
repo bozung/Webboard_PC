@@ -20,6 +20,6 @@
     <tr><td>อีเมล :</td><td><input type="email" name="email" size="40" required></td></tr>
     <tr><td colspan="2" style="text-align: center;"><input type="submit" value="สมัครสมาขิก"></td></tr>
 </table>
-<div style="text-align: center;"><a href="index.html">กลับไปหน้าหลัก</a></div>
+<div style="text-align: center;"><a href="index.php">กลับไปหน้าหลัก</a></div>
 </body>
 </html>

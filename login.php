@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <h1 style="text-align: center">PHATPHONNICHA CHAIMATE</h1>
+  <h1 style="text-align: center">WEB WEB EI EI</h1>
   <hr />
   <form action="verify.php" method="post">
     <table style="border: 2px solid black; width: 40%" align="center">
@@ -37,7 +37,7 @@
   <br />
   <div align="center">
     ถ้ายังไม่ได้เป็นสมาชิกกรุณาสมัครสมาชิก
-    <a href="register.html">กรุณาสมัครสมาชิก</a>
+    <a href="register.php">กรุณาสมัครสมาชิก</a>
   </div>
 </body>
 
