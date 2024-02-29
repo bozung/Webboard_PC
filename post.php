@@ -6,7 +6,7 @@
     <title>Post</title>
 </head>
 <body>
-    <h1 style="text-align: center;">Webboard GG</h1>
+    <h1 style="text-align: center;">Webboard </h1>
     <hr>
     <center>
         ต้องการดูกระทู้หมายเลข <?php echo $_GET['id']; 
