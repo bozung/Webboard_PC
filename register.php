@@ -19,26 +19,36 @@ if (isset($_SESSION["id"])) {
 </head>
 
 <body>
+    <script>
+        function OnBluePwd() {
+            let pwd = document.getElementById("pwd");
+            let pwd2 = document.getElementById("pwd2");
+            if (pwd.value !== pwd2.value) {
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd2.value = "";
+            }
+        }
+    </script>
     <div class="container">
-        <h1 style="text-align: center;" class="mt-3">Webboard </h1>
+        <h1 style="text-align: center;" class="mt-3">Webboard</h1>
         <hr>
         <?php
         include "nav.php"
-        ?>
+            ?>
         <div class="row mt-4">
             <div class="col-lg-4 col-md-2 col-sm-1"></div>
             <div class="col-lg-6 col-md-8 col-sm-10">
-                <?php 
-                    if(isset($_SESSION['add_login'])){
-                        if($_SESSION['add_login']=="error"){
-                            echo "<div class ='alert alert-danger'>
+                <?php
+                if (isset($_SESSION['add_login'])) {
+                    if ($_SESSION['add_login'] == "error") {
+                        echo "<div class ='alert alert-danger'>
                             ชื่อบัญชีซ้ำหรือฐานข้อมูลมีปัญหา</div>";
-                        }else{
-                            echo "<div class ='alert alert-success'>
+                    } else {
+                        echo "<div class ='alert alert-success'>
                             เพิ่มบัญชีเรียบร้อยแล้ว</div>";
-                        }
-                        unset($_SESSION['add_login']);
                     }
+                    unset($_SESSION['add_login']);
+                }
                 ?>
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white">
@@ -55,7 +65,15 @@ if (isset($_SESSION["id"])) {
                             <div class="row mt-3">
                                 <label for="pwd" class="col-lg-3 col-form-label">รหัสผ่าน</label>
                                 <div class="col-lg-9">
-                                    <input id="pwd" type="password" name="pwd" class="form-control" required>
+                                    <input type="password" name="pwd" id="pwd" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <label for="pwd" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ</label>
+                                <div class="col-lg-9">
+                                    <input type="password" name="pwd2" id="pwd2" onblur="OnBluePwd()"
+                                        class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -68,35 +86,42 @@ if (isset($_SESSION["id"])) {
                                 <label class="col-lg-3 form-label">เพศ</label>
                                 <div class="col-lg-9">
                                     <div class="form-check">
-                                        <input id="m" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="m" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="m" class="form-check-label">ชาย</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="f" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="f" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="f" class="form-check-label">หญิง</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="o" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="o" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="o" class="form-check-label">อื่นๆ</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label for="email" class="col-lg-3 col-form-label">อีเมล</label>
-                                <div class="col-lg-9"><input id="email" type="email" name="email" class="form-control" required></div>
+                                <div class="col-lg-9"><input id="email" type="email" name="email" class="form-control"
+                                        required></div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-lg-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary btn-sm me-2"> <i class="bi bi-save"></i> สมัครสมาชิก</button>
-                                    <button type="reset" class="btn btn-danger btn-sm "> <i class="bi bi-x-square"></i> ยกเลิก</button>
+                                    <button type="submit" class="btn btn-primary btn-sm me-2"> <i
+                                            class="bi bi-save"></i> สมัครสมาชิก</button>
+                                    <button type="reset" class="btn btn-danger btn-sm "> <i class="bi bi-x-square"></i>
+                                        ยกเลิก</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-                <div class="col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
         </div>
     </div>
 </body>
+
 </html>
